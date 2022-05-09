@@ -24,7 +24,7 @@ import static org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType.
 @Configuration
 @EnableTransactionManagement
 @ComponentScan("com.game")
-@EnableJpaRepositories(basePackages = "com.game.repository")
+@EnableJpaRepositories(basePackages = "com.game")
 public class AppConfig {
 
     @Bean

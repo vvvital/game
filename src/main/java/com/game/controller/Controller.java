@@ -1,45 +1,43 @@
 package com.game.controller;
 
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @org.springframework.stereotype.Controller
 public class Controller {
 
     //Get players list
-    @RequestMapping(value = "/rest/players", method = RequestMethod.GET)
+    @GetMapping("/rest/players")
     public String getPlayersList() {
         return "users";
     }
 
     //Create new player
-    @RequestMapping(value = "/rest/players", method = RequestMethod.POST)
+    @PostMapping("/rest/players")
     public String createPlayer() {
         return "newPlayer";
     }
 
     //Get players count
-    @RequestMapping(value = "/rest/players/count", method = RequestMethod.GET)
+    @GetMapping("/rest/players/count")
     public String getPlayerCount() {
         return "index";
     }
 
 
     //Get Player
-    @RequestMapping(value = "/rest/players/{id}", method = RequestMethod.GET)
+    @GetMapping("/rest/players/{id}")
     public String getPlayer(@PathVariable Integer id) {
         return "index";
     }
 
     //Update Player
-    @RequestMapping(value = "/rest/players/{id}",method = RequestMethod.POST)
+    @PostMapping("/rest/players/{id}")
     public String updatePlayer(@PathVariable Integer id){
         return "index";
     }
 
-    @RequestMapping(value = "/rest/players/{id}",method = RequestMethod.DELETE)
+    @DeleteMapping("/rest/players/{id}")
     public String deletePlayer(@PathVariable Integer id){
         return "index";
     }
